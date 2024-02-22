@@ -13,7 +13,7 @@ const page = async() => {
   return (
     <main className="min-h-screen">
       {adminAuth ? (
-        <figure className="w-full">
+        <figure className="w-full flex justify-center bg-black">
           <Image src={footballAdminBanner} className="object-cover" alt={"Football banner"}/>
         </figure>
       ): (undefined)}
