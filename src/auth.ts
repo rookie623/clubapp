@@ -31,7 +31,7 @@ export async function authDNI(formData: FormData) {
 
 const validateDNI =async (dni: string) => {
     try {
-        const getUserByDNI = await fetch(`http://localhost:8080/players/getByDni/${dni}`, {method: 'GET'})
+        const getUserByDNI = await fetch(`https://clubapp-back-production.up.railway.app/players/getByDni/${dni}`, {method: 'GET'})
         return getUserByDNI.status === 200 ? true : false; 
         
     } catch (error) {
@@ -44,7 +44,7 @@ export async function authUser(formData:FormData) {
     const email = formData.get("email")?.toString();
     const password = formData.get("password")?.toString();
 
-    const getUserByDNI = await fetch(`http://localhost:8080/players/getByDni/${dni}`, {method: 'GET'})
+    const getUserByDNI = await fetch(`https://clubapp-back-production.up.railway.app//players/getByDni/${dni}`, {method: 'GET'})
 
     const user = await getUserByDNI.json()
 

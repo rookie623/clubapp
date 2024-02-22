@@ -17,7 +17,7 @@ export async function createUserAction(formData: FormData) {
     }
 
     try {
-        const data = await fetch('http://localhost:8080/players/save' , {  
+        const data = await fetch('https://clubapp-back-production.up.railway.app/players/save' , {  
             method: "POST",
             headers: {
             "Content-Type": "application/json",
