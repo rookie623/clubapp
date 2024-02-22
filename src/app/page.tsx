@@ -7,7 +7,7 @@ export default function Home() {
   
   return (
     <main className="flex flex-col bg-gradient-to-b bg-primary-400 min-h-screen">
-      <figure className="w-full">
+      <figure className="w-full flex justify-center bg-black">
           <Image src={footballBanner} className="object-cover" alt={"Football banner"}/>
         </figure>
       <div className={`mt-14`}>
