@@ -12,6 +12,7 @@ const LoginAdmin = () => {
         const validAuth = await adminAuth(password)
 
         if(!validAuth) {setFormState("incorrect") ; return};
+        sessionStorage.setItem("adminAuth", "true")
         router.refresh()
     }
 

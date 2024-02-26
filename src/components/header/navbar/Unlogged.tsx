@@ -1,4 +1,3 @@
-'use client'
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from 'yup';
@@ -16,7 +15,7 @@ const Unlogged = () => {
   return (
     <div>
       <button onClick={toggleNavbar} className="group bg-primary-500 font-squada rounded-3xl p-1 px-2 drop-shadow-sm text-baltic-sea-900">
-        <p className="drop-shadow-md group-active:scale-95">Inicia sesión</p>
+        <p className="group-active:scale-95">Inicia sesión</p>
         </button>
       {
         isOpen && <Login setIsOpen={setIsOpen} />

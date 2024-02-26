@@ -2,23 +2,6 @@
 
 import { cookies } from "next/headers"
 
-const users = [
-    {
-        name: "admin",
-        email: "admin@gmail.com",
-        password: "12345",
-        role: "admin",
-        dni: "12345"
-    },
-    {
-        name: "user",
-        email: "user@gmail.com",
-        role: "user",
-        password: "12345",
-        dni: "1234"
-    }
-]
-
 export async function authDNI(formData: FormData) {
     const dni = formData.get("dni")?.toString()  ;
     if (!dni) return false; 
@@ -31,7 +14,7 @@ export async function authDNI(formData: FormData) {
 
 const validateDNI =async (dni: string) => {
     try {
-        const getUserByDNI = await fetch(`https://clubapp-back-production.up.railway.app/players/getByDni/${dni}`, {method: 'GET'})
+        const getUserByDNI = await fetch(`http://localhost:8080/players/getByDni/${dni}`, {method: 'GET'})
         return getUserByDNI.status === 200 ? true : false; 
         
     } catch (error) {
@@ -44,7 +27,7 @@ export async function authUser(formData:FormData) {
     const email = formData.get("email")?.toString();
     const password = formData.get("password")?.toString();
 
-    const getUserByDNI = await fetch(`https://clubapp-back-production.up.railway.app//players/getByDni/${dni}`, {method: 'GET'})
+    const getUserByDNI = await fetch(`http://localhost:8080/players/getByDni/${dni}`, {method: 'GET'})
 
     const user = await getUserByDNI.json()
 
